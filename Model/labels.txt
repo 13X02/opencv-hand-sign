@@ -1,0 +1,12 @@
+0 A
+1 B
+2 C
+3 One
+4 Two
+5 Three
+6 Four
+7 Five
+8 Six
+9 Seven
+10 Eight
+11 Nine
