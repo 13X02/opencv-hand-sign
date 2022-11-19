@@ -2,11 +2,15 @@ import cv2
 from cvzone.HandTrackingModule import HandDetector
 import numpy as np
 import math
+import os
 
 cap = cv2.VideoCapture(0)
 detector = HandDetector(maxHands=1)
 offset =20
 imgSize = 400
+
+
+folder = "Data/A"
 
 while True:
     sucess, img = cap.read()
@@ -52,4 +56,8 @@ while True:
         cv2.imshow("ImageSquared",imageWhite)
 
     cv2.imshow("VideoLive", img)
-    cv2.waitKey(1)
+    key = cv2.waitKey(1)
+
+    if key == ord('s'):
+        cv2.imwrite(f"{folder}/{len(os.listdir(folder))}.png",imageWhite)
+        print("Image Saved")
